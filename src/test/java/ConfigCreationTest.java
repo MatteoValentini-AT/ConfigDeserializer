@@ -4,7 +4,6 @@ import classes.ConfigClass;
 import classes.InvalidConfigClass;
 import classes.ParseConfigClass;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -17,22 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConfigCreationTest {
 
-    private static final Path configFile = Paths.get("src", "test", "resources", "testConfig.cfg").toAbsolutePath();
+    private static final Path configFile = Paths.get("testConfig.cfg");
 
-    @BeforeAll
-    static void init() throws IOException {
+    @Test
+    public void testInvalidClass() throws IOException {
+        assertThrows(ConfigException.InvalidClassException.class, () -> ConfigDeserializer.deserialize(configFile, InvalidConfigClass.class));
         Files.deleteIfExists(configFile);
     }
 
-    @DisplayName("Test invalid config class")
-    @Test
-    public void testInvalidClass() throws IOException {
-        assertThrows(ConfigException.InvalidClassException.class, () -> {
-            ConfigDeserializer.deserialize(configFile, InvalidConfigClass.class);
-        });
-    }
-
-    @DisplayName("Config file creation")
     @Test
     public void testConfigCreation() throws ConfigException.InvalidValueException, ConfigException.MissingValueException, ConfigException.InvalidClassException, ConfigException.InvalidPathException, IOException {
         ConfigDeserializer.deserialize(configFile, ConfigClass.class);
@@ -45,7 +36,6 @@ public class ConfigCreationTest {
         Files.deleteIfExists(configFile);
     }
 
-    @DisplayName("Config file parsing")
     @Test
     public void testConfigFileParsing() throws ConfigException.InvalidValueException, ConfigException.MissingValueException, ConfigException.InvalidClassException, ConfigException.InvalidPathException, IOException {
         ParseConfigClass parsed = ConfigDeserializer.deserialize(configFile, ParseConfigClass.class);
