@@ -3,7 +3,6 @@ import at.matteovalentini.configdeserializer.ConfigException;
 import classes.ConfigClass;
 import classes.InvalidConfigClass;
 import classes.ParseConfigClass;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
