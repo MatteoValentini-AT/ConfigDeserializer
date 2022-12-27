@@ -102,15 +102,7 @@ public class ConfigDeserializer {
         try {
             Files.createFile(configFile);
             StringBuilder sb = new StringBuilder();
-            sb.append("""
-                 ============] Config [============
-                 #
-                 # Syntax: key: value
-                 #
-                 # Comments: # this is a comment
-                 #
-                 ==================================\n
-                 """);
+            sb.append("============] Config [============\n#\n# Syntax: key: value\n#\n# Comments: # this is a comment\n#\n==================================\n\n");
             fields.forEach((field, annotation) -> {
                 if (annotation.description().length() > 0)
                     sb.append("# ").append(annotation.description()).append("\n");
