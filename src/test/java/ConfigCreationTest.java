@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConfigCreationTest {
-
+/*
     private static final Path configFile = Paths.get("src", "test", "resources", "testConfig.cfg").toAbsolutePath();
 
     @BeforeAll
@@ -52,5 +52,5 @@ public class ConfigCreationTest {
         ParseConfigClass parsed = ConfigDeserializer.deserialize(configFile, ParseConfigClass.class);
         assertTrue(parsed.stringField.equals("Hello World"));
         Files.deleteIfExists(configFile);
-    }
+    }*/
 }
