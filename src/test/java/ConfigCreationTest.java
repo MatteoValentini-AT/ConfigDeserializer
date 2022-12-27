@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConfigCreationTest {
 
-    private static final Path configFile = Paths.get(".", "src", "test", "resources", "testConfig.cfg");
+    private static final Path configFile = Paths.get("src", "test", "resources", "testConfig.cfg").toAbsolutePath();
 
     @BeforeAll
     static void init() throws IOException {
@@ -27,7 +27,7 @@ public class ConfigCreationTest {
 
     @DisplayName("Test invalid config class")
     @Test
-    public void testInvalidClass() {
+    public void testInvalidClass() throws IOException {
         assertThrows(ConfigException.InvalidClassException.class, () -> {
             ConfigDeserializer.deserialize(configFile, InvalidConfigClass.class);
         });
