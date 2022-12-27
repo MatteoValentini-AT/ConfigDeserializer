@@ -15,6 +15,8 @@ Add the following dependency to your pom.xml:
 ```
 # Usage
 
+You can find the JavaDocs [here](https://matteovalentini-at.github.io/ConfigDeserializer/at/matteovalentini/configdeserializer/package-summary.html).
+
 First, create a config class and annotate all fields that should be included in the config file with ```@ConfigValue``` (see the table below for options). Supported types are ```byte, short, int, long, float, double, boolean, String``` and ```Class<? extends Enum>```. Example class:
 
 ```java
