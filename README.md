@@ -4,8 +4,15 @@ A Java package used to generate and deserialize config files. Simply annotate fi
 
 # Install (Maven Central)
 
-tbd.
+Add the following dependency to your pom.xml:
 
+```
+<dependency>
+    <groupId>at.matteovalentini</groupId>
+    <artifactId>configdeserializer</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
 # Usage
 
 First, create a config class and annotate all fields that should be included in the config file with ```@ConfigValue``` (see the table below for options). Supported types are ```byte, short, int, long, float, double, boolean, String``` and ```Class<? extends Enum>```. Example class:
