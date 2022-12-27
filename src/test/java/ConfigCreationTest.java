@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ConfigCreationTest {
 
-    private static final Path configFile = Paths.get("src", "test", "resources", "testConfig.cfg");
+    private static final Path configFile = Paths.get(".", "src", "test", "resources", "testConfig.cfg");
 
     @BeforeAll
     static void init() throws IOException {
